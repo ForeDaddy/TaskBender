@@ -1,40 +1,49 @@
-import React, { useState, useEffect} from 'react';
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin, { Draggable } from '@fullcalendar/interaction';
+import React, { useState, useEffect } from "react";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
+import googleCalendarPlugin from "@fullcalendar/google-calendar";
 
 const Calendar = () => {
-
   useEffect(() => {
     let draggableEl = document.getElementById("external-events");
     new Draggable(draggableEl, {
       itemSelector: ".fc-event-main",
-      eventData: function(eventEl) {
+      eventData: function (eventEl) {
         let title = eventEl.getAttribute("title");
         let id = eventEl.getAttribute("data");
         let duration = eventEl.getAttribute("duration");
         return {
           title: title,
           id: id,
-          duration: duration
+          duration: duration,
         };
-      }
+      },
     });
   }, []);
 
   return (
     <div className="calendar">
-      <h3>Calendar Component</h3>
-
       <FullCalendar
-        plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin ]}
+        plugins={[
+          dayGridPlugin,
+          timeGridPlugin,
+          interactionPlugin,
+          googleCalendarPlugin,
+        ]}
+        googleCalendarApiKey="AIzaSyCV1CTY0RLovLT7xfN59CMSntmq4z1hxac"
+        events={{
+          googleCalendarId:
+            "2cd3a0643ecd0748f8cd0c3512ecab419cc4e86a60be27770065c4ffefbe2149@group.calendar.google.com",
+        }}
         droppable={true}
         editable={true}
         initialView="timeGridDay"
-        themeSystem="bootstrap" />
+        themeSystem="bootstrap"
+      />
     </div>
-  )
+  );
 };
 
 export default Calendar;

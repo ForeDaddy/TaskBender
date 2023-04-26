@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+
   text-align: center;
 }
 
@@ -42,5 +42,43 @@
 }
 
 .calendar {
-  width: 80vw;
+  width: 60vw;
+}
+
+.Layout {
+  display: flex;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.mytasks {
+  display: flex;
+  justify-content: center;
+
+  margin: 20px;
+  font-size: 30px;
+}
+.mycal {
+}
+
+.topBar {
+  background-color: #04046d;
+  text-align: left;
+  padding-left: 80px;
+  margin-top: none;
+  padding-top: none;
+  margin-right: none;
+  padding-right: none;
+}
+.Title {
+  font-size: 50px;
+  font-weight: bold;
+  color: whitesmoke;
+}
+.subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: whitesmoke;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
 }
