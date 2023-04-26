@@ -32,7 +32,7 @@ const Calendar = () => {
           interactionPlugin,
           googleCalendarPlugin,
         ]}
-        googleCalendarApiKey="AIzaSyCV1CTY0RLovLT7xfN59CMSntmq4z1hxac"
+        googleCalendarApiKey="API KEY"
         events={{
           googleCalendarId:
             "2cd3a0643ecd0748f8cd0c3512ecab419cc4e86a60be27770065c4ffefbe2149@group.calendar.google.com",
